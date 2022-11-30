@@ -1,0 +1,77 @@
+// Override default variables before the import
+
+$primary: #2b50aa;
+$secondary: #ff858d;
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  padding: 48px;
+  margin: 32px;
+  max-width: 600px;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-select-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-radio {
+  color: $gray-600 !important;
+}
+.form-check-input {
+  border-color: $gray-600 !important;
+}
+
+.match-radio:hover {
+  cursor: pointer;
+}
+
+.selected-radio {
+  /* border-bottom: 2px solid blue; */
+  color: #2b50aa !important;
+}
+
+.form-check-input:checked {
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+
+.form-check-input:valid {
+  color: inherit;
+}
+.was-validated .form-check-input:valid ~ .form-check-label {
+  color: inherit;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.logo {
+  width: 100%;
+  max-width: 200px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  flex-direction: column;
+}

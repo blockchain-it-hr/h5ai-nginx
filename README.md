@@ -2,34 +2,19 @@
 
 Docker for h5ai project (https://github.com/lrsjng/h5ai)
 
-To use:
+Used as a Web UI and API for the Sourify contract repository.
+
+Since there are thousands of folders in a chain folder, displaying all of them takes too long. Hence the nginx config does not allow these routes and redirects to the form under `redirects/`. To build the form page
+
 ```
-docker run \
-  --name h5ai
-  -p 80:80 \
-  -v /you/path/to/inspect/data/:/data \
-  -v h5ai:/h5ai \
-  -e USERNAME=user \
-  -e PASSWORD=pass \
-  mythevalentinus/h5ai-nginx:latest
+cd repo-guide-form
+npm run build
 ```
 
-## docker-compose.yml
+This will create the build inside the redirects folder.
+
+Then
+
 ```
-services:
-  h5ai:
-    image: mythevalentinus/h5ai-nginx:latest
-    restart: always
-    container_name: h5ai
-    environment:
-      USERNAME: user
-      PASSWORD: pass
-    volumes:
-      - h5ai:/h5ai
-      - /your/local/data:/data
-    ports:
-      - 80:80/tcp
-volumes:
-  h5ai:
-    driver: local
+docker-compose up
 ```
